@@ -21,7 +21,7 @@ const Hero = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-background">
       {/* Background collage */}
-      <div className="absolute inset-0 grid grid-cols-6 grid-rows-3 gap-1 scale-110 brightness-75">
+      <div className="absolute inset-0 grid grid-cols-6 grid-rows-3 gap-1 brightness-75">
         {images.map((src, i) => (
           <div
             key={i}
@@ -32,7 +32,7 @@ const Hero = () => {
       </div>
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/60 to-black/90" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/60 to-background" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-end">
