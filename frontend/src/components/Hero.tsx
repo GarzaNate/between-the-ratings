@@ -19,7 +19,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-background">
+    <section className="relative w-full overflow-hidden bg-background">
       {/* Background collage */}
       <div className="absolute inset-0 grid grid-cols-6 grid-rows-3 gap-1 brightness-75">
         {images.map((src, i) => (
@@ -35,13 +35,13 @@ const Hero = () => {
       <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/60 to-background" />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-end">
-        <div className="max-w-2xl px-10 pb-24 text-white space-y-6">
+      <div className="relative z-10 flex flex-col pt-32 pb-20">
+        <div className="max-w-2xl p-10 text-white space-y-6">
           <span className="uppercase tracking-widest text-sm text-accent">
             The hub for passionate readers
           </span>
 
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+          <h1 className="text-5xl md:text-4xl font-bold leading-tight">
             Track books.
             <br />
             Write reviews.

@@ -18,3 +18,7 @@
   --color-warning: #f59e0b;
 
 }
+
+body {
+  @apply bg-background text-text-primary font-sans;
+}

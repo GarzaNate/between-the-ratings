@@ -7,7 +7,7 @@ import BookStrip from "@/components/BookStrip";
 const Home = () => {
   console.log("Home page loaded");
   return (
-    <main className="bg-background min-h-screen">
+    <main className="bg-background">
       <div className="relative">
         <Navbar />
         <Hero />
