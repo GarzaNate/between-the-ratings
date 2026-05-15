@@ -1,71 +1,33 @@
 import React from "react";
-import Image from "next/image";
-// import heroImage from "../../public/bookReviewHeroImg.png";
 
 const Hero = () => {
-  const images = [
-    "/covers/cover1.jpg",
-    "/covers/cover2.jpg",
-    "/covers/cover3.jpg",
-    "/covers/cover4.jpg",
-    "/covers/cover5.jpg",
-    "/covers/cover6.jpg",
-    "/covers/cover7.jpg",
-    "/covers/cover8.jpg",
-    "/covers/cover9.jpg",
-    "/covers/cover10.jpg",
-    "/covers/cover11.jpg",
-    "/covers/cover12.jpg",
-  ];
-
   return (
-    <section className="relative w-full overflow-hidden bg-background">
-      {/* Background collage */}
-      <div className="absolute inset-0 grid grid-cols-6 grid-rows-3 gap-1 brightness-75">
-        {images.map((src, i) => (
-          <div
-            key={i}
-            className="bg-cover bg-center"
-            style={{ backgroundImage: `url(${src})` }}
-          />
-        ))}
-      </div>
-
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/60 to-background" />
-
-      {/* Content */}
-      <div className="relative z-10 flex flex-col pt-32 pb-20">
-        <div className="max-w-2xl p-10 text-white space-y-6">
-          <span className="uppercase tracking-widest text-sm text-accent">
-            The hub for passionate readers
-          </span>
-
-          <h1 className="text-5xl md:text-4xl font-bold leading-tight">
-            Track books.
-            <br />
-            Write reviews.
-            <br />
-            Discover your next favorite.
-          </h1>
-
-          <p className="text-lg text-text-secondary max-w-xl">
-            Build your reading identity. Follow friends. Share opinions. Create
-            a living library of everything you’ve read and want to read.
-          </p>
-
-          <div className="flex gap-4 pt-4">
-            {/* <button className="px-6 py-3 rounded-lg bg-primary hover:opacity-90 transition">
-              Create free account
-            </button> */}
-            <button className="px-6 py-3 rounded-lg bg-primary hover:opacity-90 transition">
-              Explore reviews
-            </button>
+    <section className="relative flex min-h-[70vh] w-full items-center justify-center bg-background text-white">
+      <div className="relative z-10 mx-auto w-full max-w-5xl px-6 py-24 sm:px-8 lg:px-12">
+        <div className="rounded-4xl border border-white/10 bg-background-elevated/90 p-10 shadow-[0_30px_80px_-30px_rgba(15,23,42,0.85)] backdrop-blur-xl">
+          <div className="rounded-full bg-white/5 px-4 py-2 text-sm uppercase tracking-[0.35em] text-sky-300 ring-1 ring-white/10 backdrop-blur-sm">
+            Designed for thoughtful readers
           </div>
 
-          <p className="text-sm text-text-muted pt-2">
-            Not Goodreads. Not Amazon. Built for readers.
+          <div className="max-w-3xl space-y-6">
+          <h1 className="text-5xl font-semibold leading-tight tracking-tight sm:text-6xl">
+            A sharper way to track, review, and discover books.
+          </h1>
+
+          <p className="max-w-2xl text-lg text-slate-300 sm:text-xl">
+            Capture your reading journey with minimal distraction. Share honest
+            thoughts, follow people you trust, and keep your next reads within reach.
           </p>
+
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <button className="inline-flex items-center justify-center rounded-full bg-sky-400 px-8 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-300">
+              Explore reviews
+            </button>
+            <button className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-3 text-sm font-semibold text-white transition hover:border-sky-300 hover:text-sky-300">
+              Start your reading list
+            </button>
+          </div>
+        </div>
         </div>
       </div>
     </section>
