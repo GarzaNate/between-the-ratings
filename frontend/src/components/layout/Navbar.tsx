@@ -15,7 +15,7 @@ const Navbar = () => {
       {/* Middle - Navigation Links */}
       <div className="flex gap-8 flex-1 justify-center">
         <a
-          href="#"
+          href="discover"
           className="text-text-secondary hover:text-primary transition-colors font-medium"
         >
           Discover
