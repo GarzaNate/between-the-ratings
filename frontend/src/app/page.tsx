@@ -1,9 +1,9 @@
 import Navbar from "@/components/layout/Navbar";
-import Hero from "@/components/Hero";
+import Hero from "@/features/home/components/Hero";
 import React from "react";
-import FeatureStrip from "@/components/FeatureStrip";
-import BookStrip from "@/components/BookStrip";
-import ReviewSection from "@/components/ReviewSection";
+import FeatureStrip from "@/features/books/components/FeatureStrip";
+import BookStrip from "@/features/books/components/BookStrip";
+import ReviewSection from "@/features/home/components/ReviewSection";
 
 const Home = () => {
   console.log("Home page loaded");

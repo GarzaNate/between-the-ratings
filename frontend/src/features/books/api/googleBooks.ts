@@ -3,7 +3,7 @@ import { Book } from "../types/book";
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
 const BASE_URL = "https://www.googleapis.com/books/v1/volumes";
 
-console.log("API_KEY:", API_KEY); // Log the API key to verify it's being read correctly
+// console.log("API_KEY:", API_KEY); // Log the API key to verify it's being read correctly
 
 export async function searchBooks(query: string): Promise<Book[]> {
   const response = await fetch(
