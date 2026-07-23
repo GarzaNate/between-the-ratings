@@ -7,7 +7,7 @@ interface BookCardProps {
 
 const BookCard = ({ book }: BookCardProps) => {
   return (
-    <article className="overflow-hidden rounded-xl border bg-white shadow transition hover:-translate-y-1 hover:shadow-lg">
+    <article className="overflow-hidden rounded-xl border shadow transition hover:-translate-y-1 hover:shadow-lg">
       <div className="aspect-2/3 bg-gray-100">
         {book.coverImage ? (
           <Image

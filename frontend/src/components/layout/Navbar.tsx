@@ -6,11 +6,11 @@ const Navbar = () => {
     <nav
       className="uppercase absolute top-0 left-0 right-0 px-8 py-4 flex items-center justify-between z-50 bg-linear-to-b from-black/60 to-transparent">
       {/* Left - Logo */}
-      <div className="flex-1">
-        <a href="#" className="text-4xl font-bold text-text-primary">
-          <span className="text-primary">B</span>
-          TR
-        </a>
+      <div className="flex-1"> 
+        {/* update logo later */}
+        <Link href="/" className="text-2xl font-bold text-primary">
+          Between the Ratings
+        </Link>
       </div>
 
       {/* Middle - Navigation Links */}
