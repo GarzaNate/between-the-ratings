@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
 /* ===== CSS Variables ===== */
- @theme {
-  /* Colors */
+@theme {
   --color-primary: #0ea5e9;
   --color-secondary: #ec4899;
   --color-accent: #38bdf8;
@@ -16,9 +15,23 @@
   --color-success: #10b981;
   --color-error: #ef4444;
   --color-warning: #f59e0b;
+}
 
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background-color: var(--color-background);
 }
 
 body {
-  @apply bg-background text-text-primary font-sans;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
 }

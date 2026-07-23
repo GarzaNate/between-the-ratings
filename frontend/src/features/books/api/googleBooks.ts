@@ -28,6 +28,6 @@ export async function searchBooks(query: string): Promise<Book[]> {
     authors: item.volumeInfo.authors || [],
     description: item.volumeInfo.description || "",
     publishedDate: item.volumeInfo.publishedDate || "",
-    coverImage: item.volumeInfo.imageLinks?.thumbnail ?? "",
+    coverImage: item.volumeInfo.imageLinks?.thumbnail.replace("http://", "https://") ?? "",
   }));
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -14,18 +15,15 @@ const Navbar = () => {
 
       {/* Middle - Navigation Links */}
       <div className="flex gap-8 flex-1 justify-center">
-        <a
-          href="discover"
-          className="text-text-secondary hover:text-primary transition-colors font-medium"
-        >
+        <Link href="/discover" className="text-text-primary hover:text-primary transition-all font-medium">
           Discover
-        </a>
-        <a
-          href="#"
-          className="text-text-secondary hover:text-primary transition-colors font-medium"
-        >
+        </Link>
+        <Link href="/about" className="text-text-primary hover:text-primary transition-all font-medium">
           About
-        </a>
+        </Link>
+        <Link href="/contact" className="text-text-primary hover:text-primary transition-all font-medium">
+          Contact
+        </Link>
       </div>
 
       {/* Right - Auth Buttons */}

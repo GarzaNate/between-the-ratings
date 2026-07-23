@@ -1,24 +1,27 @@
-// // interface BookGridProps {
-// //     books: Book[];
-// // }
+import { Book } from "../types/book";
+import BookCard from "./BookCard";
 
-// export default function BookGrid({ books }: BookGridProps) {
-//     if (books.length === 0) {
-//         return (
-//             <p className="mt-8">
-//                 Search for a book to get started.
-//             </p>
-//         );
-//     }
+interface BookGridProps {
+  books: Book[];
+  query: string;
+}
 
-//     return (
-//         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
-//             {/* {books.map(book => (
-//                 <BookCard
-//                     key={book.id}
-//                     book={book}
-//                 />
-//             ))} */}
-//         </div>
-//     );
-// }
+export default function BookGrid({ books, query }: BookGridProps) {
+  if (!query) {
+    return (
+      <p className="mt-10 text-gray-500">Search for a book to get started.</p>
+    );
+  }
+
+  if (books.length === 0) {
+    return <p className="mt-10">No books found.</p>;
+  }
+
+  return (
+    <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+      {books.map((book) => (
+        <BookCard key={book.id} book={book} />
+      ))}
+    </div>
+  );
+}
