@@ -1,51 +1,51 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { searchBooks } from "@/features/books/api/googleBooks";
 import { Book } from "@/features/books/types/book";
-// Need to create a search bar to test if API is working.
 
-const DiscoverPage = () => {
-  const [search, setSearch] = useState("");
+import SearchBar from "@/features/books/components/SearchBar";
+// import BookGrid from "@/features/books/components/BookGrid";
+
+export default function DiscoverPage() {
   const [books, setBooks] = useState<Book[]>([]);
+  const [query, setQuery] = useState("");
+  const [error, setError] = useState("");
 
-  const handleSearch = async () => {
+  async function handleSearch(search: string) {
+    setQuery(search);
+    setError("");
+
     try {
       const results = await searchBooks(search);
       setBooks(results);
-    } catch (error) {
-      console.error("Error searching books:", error);
+    } catch {
+      setError("Unable to search for books.");
+      setBooks([]);
     }
-  };
+  }
 
   return (
-    <main className="max-w-5xl mx-auto p-8">
-      <h1 className="text-4xl font-bold mb-8">Discover</h1>
+    <main className="mx-auto max-w-7xl px-6 py-12">
+      <section className="mb-12">
+        <h1 className="text-5xl font-bold">
+          Discover Books
+        </h1>
 
-      <input
-        type="text"
-        placeholder="Search for books..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        className="w-full p-2 border border-gray-300 rounded mb-4"
-      />
-      <button
-        onClick={handleSearch}
-        className="px-4 py-2 bg-blue-500 text-white rounded"
-      >
-        Search
-      </button>
+        <p className="mt-4 text-gray-500">
+          Search millions of books by title, author, or keyword.
+        </p>
+      </section>
 
-      <div className="mt-8">
-        {books.map((book) => (
-          <div key={book.id} className="mb-4">
-            <h2 className="text-xl font-bold">{book.title}</h2>
-            <p className="text-gray-600">{book.authors.join(", ")}</p>
-          </div>
-        ))}
-      </div>
+      <SearchBar onSearch={handleSearch} />
+
+      {error && (
+        <p className="mt-6 text-red-500">
+          {error}
+        </p>
+      )}
+
+      {/* <BookGrid books={books} query={query} /> */}
     </main>
   );
-};
-
-export default DiscoverPage;
+}
